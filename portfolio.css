@@ -1,0 +1,423 @@
+/*Portfolio page/main home page*/
+
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: 'Helvetica Neue', sans-serif;
+    color: white;
+}
+
+/* Header and Navigation */
+header {
+    background: url(images/IMG_7484.jpeg) no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+    font-weight: bold;
+}
+
+nav ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+nav ul li {
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+/*Copiliot prompt: Add an orange glow effect to the nav bar text on hover*/
+nav ul li:hover {
+    color: #f39c12; 
+    text-shadow: 0 0 10px #f39c12, 0 0 20px #f39c12, 0 0 30px #f39c12;
+}
+
+.hero {
+    text-align: center;
+    padding-bottom: 5rem;
+}
+
+.hero h2 {
+    font-weight: normal;
+    letter-spacing: 1px;
+}
+
+/* Copilot prompt: increase the font size of the h2 tag and add a subtle glow effect, make the text look more even and spaced out*/
+.hero h1 {
+    font-size: 3.5rem; 
+    margin: 1rem 0;
+    letter-spacing: 2px; 
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); 
+}
+
+.hero p {
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+/* About Section */
+.about-section {
+    background: #1a1a1a;
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+/*Copiliot prompt: Add 3 small circular images to the about section, make them look like a mini gallery, underneath these 3 pictures I want to write some text*/
+.about-images {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.about-images img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.about-text p {
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+/* "More" Button */
+/* Copiliot prompt: Add a more button to the about section, make it look like a call to action button, and add some hover effects, make it orange with black text*/
+.more-button {
+    margin-top: 2rem;
+}
+
+.more-button a {
+    background-color: #f39c12;
+    color: #1a1a1a;
+    text-decoration: none;
+    padding: 0.75rem 3rem;
+    font-weight: bold;
+    border-radius: 30px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.more-button a:hover {
+    background-color: #f1c40f;
+    transform: scale(1.1);
+}
+
+  
+
+
+
+
+
+  /*contact me page*/
+  /* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    font-family: 'Helvetica Neue', sans-serif;
+    color: white;
+    height: 100%;
+    background-color: #1a1a1a;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: black;
+    color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+nav ul {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+}
+
+nav ul li {
+    cursor: pointer;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #f39c12;
+}
+
+/* Contact Section */
+/* Copiliot prompt: Add a contact me section to the page, with contact me written in bold on top, Include a circular profile picture area in the center*/
+.contact {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: white;
+}
+
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 2rem;
+}
+
+.profile-picture img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/*Copilot prompt:.Add contact icons underneath profile image with spacing and hover scale effect.*/
+.contact-icons {
+    display: flex;
+    gap: 2rem;
+}
+
+.contact-icons a {
+    color: white;
+    text-decoration: none;
+    text-align: center;
+}
+
+.contact-icons img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s;
+}
+/*copilot prompt: Add a hover effect to the contact icons, make them scale up slightly when hovered over*/
+.contact-icons img:hover {
+    transform: scale(1.1);
+}
+
+.contact-icons p {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+
+
+
+
+
+
+
+  /*about me page*/
+
+  /* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    font-family: 'Helvetica Neue', sans-serif;
+    color: white;
+    height: 100%;
+    background-color: #1a1a1a;
+  }
+  
+  /* Navigation Bar */
+  nav {
+    background-color: black;
+    color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  nav .logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+  
+  nav ul {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+  }
+  
+  nav ul li {
+    cursor: pointer;
+  }
+  
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  nav ul li a:hover {
+    color: #f39c12;
+  }
+  
+  /* About Section */
+  .about {
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+  
+  .about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: white;
+  }
+  /*Copilot prompt: create a container where I can put my profile picture and a short bio about myself*/
+  .bio-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  /*Copilot prompt... create a circular profile picture area in the center of the about me page*/
+  .bio-picture {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 2rem;
+  }
+  
+  .bio-picture img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  /*Copilot prompt: Style bio text with good line height and soft opacity*/
+  .bio-text {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1rem;
+    opacity: 0.8;
+    line-height: 1.6;
+  }
+  
+  .bio-text p {
+    margin-bottom: 1rem;
+  }
+  
+
+  
+  
+  /* Gallery Section */
+.gallery {
+    padding: 4rem 2rem;
+    text-align: center;
+    background-color: #1a1a1a;
+  }
+  
+  .gallery h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: white;
+  }
+  
+  /*copilot prompt: create a gallery section with 5 images in full width, make them look like a grid, and add some spacing between them.*/
+  .gallery-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+  
+ /*copilot prompt: add a border to the images, make it look like a polaroid frame*/
+  .gallery-item {
+    flex: 1 1 250px;
+    max-width: 300px;
+    background-color: #2b2b2b;
+    padding: 1rem;
+    border-radius: 8px;
+    transition: transform 0.3s;  
+  }
+  /*copilot prompt: add a hover effect to the images, make them scale up slightly when hovered over*/
+  .gallery-item:hover {
+    transform: scale(1.02);
+  }
+ /*copilot prompt: make the images responsive, so they fit well on different screen sizes*/
+  .gallery-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    object-fit: cover;
+  }
+  /*copilot prompt: add a description/caption area to each image in the gallery use white font */
+  .gallery-item p {
+    margin-top: 0.5rem;
+    color: #ccc;
+    font-size: 1rem;
+  }
+  
+
+
+
+  /* Footer */
+  footer {
+    background-color: #111;
+    color: #fff;
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: 4rem;
+    font-size: 0.9rem;
+    opacity: 0.9;
+  }
+  
+  footer .top-link {
+    display: inline-block;
+    margin-top: 1rem;
+    text-decoration: none;
+    color: #f39c12;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  footer .top-link:hover {
+    color: #e67e22;
+  }
+  
