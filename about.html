@@ -4,20 +4,29 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Me - Photographer's Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="portfolio.css" />
-  <body id="top">
-
 </head>
-<body>
+<body id="top">
   <!-- Navigation Bar -->
   <nav>
     <div class="logo">Omar Eyad</div>
-    <ul>
-      <li><a href="index.html">HOME</a></li>
-      <li><a href="about.html">ABOUT</a></li>
-      <li><a href="gallery.html">GALLERY</a></li>
-      <li><a href="contact.html">CONTACT</a></li>
-    </ul>
+    <div class="nav-right">
+      <ul class="nav-menu">
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="gallery.html">GALLERY</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+      </ul>
+      <button class="theme-toggle" id="themeToggle">🌙</button>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
   </nav>
 
   <!-- About Me Section -->
@@ -25,12 +34,13 @@
     <h2>About Me</h2>
     <div class="bio-container">
       <div class="bio-picture">
-        <img src="images\IMG_9281.jpeg" alt="My Profile Picture" />
+        <img src="images/IMG_9281.jpeg" alt="My Profile Picture" />
       </div>
       <div class="bio-text">
         <p>Welcome to my website. I'm Omar, a Junior software engineer at the university of Kurdistan-Hewler and a passionate photographer who loves capturing special moments.</p>
-        <p> My style is a bit of everything, from beautiful natural landscapes to cars. I like to create and explore whether through the lens of a camera or behind a computer screen. </p>
-        <p>Capturing moments with every adventure and creating unforgettable memories. </p>
+        <p>My style is a bit of everything, from beautiful natural landscapes to cars. I like to create and explore whether through the lens of a camera or behind a computer screen.</p>
+        <p>Capturing moments with every adventure and creating unforgettable memories.</p>
+      </div>
     </div>
   </section>
 
@@ -38,7 +48,7 @@
     <p>&copy; 2025 Omar Eyad. All rights reserved.</p>
     <a href="#top" class="top-link">↑ Back to Top</a>
   </footer>
-  
-</body>
 
+  <script src="portfolio.js"></script>
+</body>
 </html>

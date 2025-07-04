@@ -3,33 +3,44 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Photographer's Portfolio</title>
+  <title>Omar's Photography Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="portfolio.css" />
-  <body id="top">
-
 </head>
-<body>
+<body id="top">
   <header>
     <nav>
-      <div>Omar Eyad</div>
-      <ul>
-        <li><a href="index.html">HOME</a></li>
-        <li><a href="about.html">ABOUT</a></li>
-        <li><a href="gallery.html">GALLERY</a></li>
-        <li><a href="contact.html">CONTACT</a></li>
-      </ul>
+      <div class="logo">Omar Eyad</div>
+      <div class="nav-right">
+        <ul class="nav-menu">
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="about.html">ABOUT</a></li>
+          <li><a href="gallery.html">GALLERY</a></li>
+          <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+        <button class="theme-toggle" id="themeToggle">🌙</button>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
     </nav>
     <div class="hero">
-      <h2>WELCOME TO</h2>
-      <h1>OMAR'S PHOTOGRAPHY PORTFOLIO</h1>
-      <p>Capturing special moments, one frame at a time.</p>
+      <div class="hero-content">
+        <h2>WELCOME TO</h2>
+        <h1>OMAR'S PHOTOGRAPHY PORTFOLIO</h1>
+        <p>Capturing special moments, one frame at a time.</p>
+      </div>
     </div>
   </header>
 
   <section class="about-section">
     <div class="about-images">
       <img src="images/IMG_3428.jpeg" alt="img1" />
-      <img src="images\IMG_3430 (2).jpeg" alt="img2" />
+      <img src="images/IMG_3430 (2).jpeg" alt="img2" />
       <img src="images/IMG_5570.jpeg" alt="img3" />
     </div>
     <div class="about-text">
@@ -39,11 +50,12 @@
       <a href="gallery.html" class="more-link">EXPLORE GALLERY</a>
     </div>
   </section>
-<!-- copilot prompt -> create a copyright footer under the name Omar Eyad, use a black background matching the website's design. Include an anchor tag link to the top of the page -->
+
   <footer>
     <p>&copy; 2025 Omar Eyad. All rights reserved.</p>
     <a href="#top" class="top-link">↑ Back to Top</a>
   </footer>
   
+  <script src="portfolio.js"></script>
 </body>
 </html>

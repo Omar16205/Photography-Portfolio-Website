@@ -4,20 +4,29 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact Me - Photographer's Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="portfolio.css" />
-  <body id="top">
-
 </head>
-<body>
+<body id="top">
   <!-- Navigation Bar -->
   <nav>
     <div class="logo">Omar Eyad</div>
-    <ul>
+    <div class="nav-right">
+      <ul class="nav-menu">
         <li><a href="index.html">HOME</a></li>
         <li><a href="about.html">ABOUT</a></li>
         <li><a href="gallery.html">GALLERY</a></li>
         <li><a href="contact.html">CONTACT</a></li>
       </ul>
+      <button class="theme-toggle" id="themeToggle">🌙</button>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
   </nav>
 
   <!-- Contact Section -->
@@ -32,12 +41,12 @@
           <img src="icons/instagram.png" alt="Instagram" />
           <p>Instagram</p>
         </a>
-        <a href="mailto: omarkh2@hotmail.com">
-          <img src="icons\mail.png" alt="Email" />
+        <a href="mailto:omarkh2@hotmail.com">
+          <img src="icons/mail.png" alt="Email" />
           <p>Email</p>
         </a>
         <a href="https://github.com/omar16205" target="_blank">
-          <img src="icons\github.png" alt="GitHub" />
+          <img src="icons/github.png" alt="GitHub" />
           <p>GitHub</p>
         </a>
       </div>
@@ -48,8 +57,7 @@
     <p>&copy; 2025 Omar Eyad. All rights reserved.</p>
     <a href="#top" class="top-link">↑ Back to Top</a>
   </footer>
-  
+
+  <script src="portfolio.js"></script>
 </body>
-
-
 </html>

@@ -1,4 +1,27 @@
-/*Portfolio page/main home page*/
+/* Portfolio CSS - All Pages */
+
+/* CSS Variables for Theme */
+:root {
+    --bg-color: #1a1a1a;
+    --text-color: white;
+    --nav-bg: rgba(0, 0, 0, 0.1);
+    --nav-border: rgba(255, 255, 255, 0.1);
+    --footer-bg: #111;
+    --about-bg: #1a1a1a;
+    --image-border: rgba(243, 156, 18, 0.3);
+    --shadow-color: rgba(0, 0, 0, 0.95);
+}
+
+[data-theme="light"] {
+    --bg-color: #f8f9fa;
+    --text-color: #333;
+    --nav-bg: rgba(255, 255, 255, 0.9);
+    --nav-border: rgba(0, 0, 0, 0.1);
+    --footer-bg: #e9ecef;
+    --about-bg: #ffffff;
+    --image-border: rgba(243, 156, 18, 0.5);
+    --shadow-color: rgba(255, 255, 255, 0.95);
+}
 
 /* General Styles */
 * {
@@ -6,257 +29,270 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+html{
+  scroll-behavior: smooth;
+}
 body, html {
     height: 100%;
-    font-family: 'Helvetica Neue', sans-serif;
-    color: white;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: var(--bg-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Header and Navigation */
 header {
-    background: url(images/IMG_7484.jpeg) no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    position: relative;
 }
 
 nav {
     display: flex;
     justify-content: space-between;
-    padding: 2rem;
-    font-weight: bold;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    background: var(--nav-bg);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--nav-border);
+    transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    background: none;
+    border: 2px solid var(--text-color);
+    color: var(--text-color);
+    padding: 0.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 1rem;
+}
+
+.theme-toggle:hover {
+    background: var(--text-color);
+    color: var(--bg-color);
+    transform: scale(1.1);
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: var(--text-color);
+    text-transform: uppercase;
+    transition: color 0.3s ease;
 }
 
 nav ul {
     display: flex;
-    gap: 2rem;
+    gap: 2.5rem;
     list-style: none;
+    align-items: center;
+}
+
+nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #f39c12, #e67e22);
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #f39c12;
+    text-shadow: 0 0 10px rgba(243, 156, 18, 0.5);
+}
+
+nav ul li a:hover::after {
     width: 100%;
 }
 
-nav ul li {
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
     cursor: pointer;
-    position: relative;
-    transition: color 0.3s, text-shadow 0.3s;
+    padding: 5px;
+    z-index: 1001;
 }
 
-/*Copiliot prompt: Add an orange glow effect to the nav bar text on hover*/
-nav ul li:hover {
-    color: #f39c12; 
-    text-shadow: 0 0 10px #f39c12, 0 0 20px #f39c12, 0 0 30px #f39c12;
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: var(--text-color);
+    margin: 3px 0;
+    transition: 0.3s;
+    border-radius: 2px;
 }
 
+.hamburger.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.nav-menu {
+    transition: all 0.3s ease;
+}
+
+/* Hero Section (Home Page) */
 .hero {
     text-align: center;
     padding-bottom: 5rem;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
 }
 
 .hero h2 {
-    font-weight: normal;
-    letter-spacing: 1px;
+    font-weight: 300;
+    letter-spacing: 3px;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+    text-transform: uppercase;
+    color: white !important;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
 }
 
-/* Copilot prompt: increase the font size of the h2 tag and add a subtle glow effect, make the text look more even and spaced out*/
 .hero h1 {
     font-size: 3.5rem; 
-    margin: 1rem 0;
+    margin: 1rem 0 2rem 0;
     letter-spacing: 2px; 
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); 
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.8);
+    font-weight: 700;
+    line-height: 1.2;
+    color: white !important;
 }
 
 .hero p {
     max-width: 600px;
     margin: 0 auto;
-    font-size: 1rem;
-    opacity: 0.8;
+    font-size: 1.1rem;
+    opacity: 0.9;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    color: white !important;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
 }
 
-/* About Section */
+/* About Section (Home Page) */
 .about-section {
-    background: #1a1a1a;
+    background: var(--about-bg);
     text-align: center;
-    padding: 4rem 2rem;
+    padding: 5rem 2rem;
+    transition: background 0.3s ease;
 }
 
-/*Copiliot prompt: Add 3 small circular images to the about section, make them look like a mini gallery, underneath these 3 pictures I want to write some text*/
 .about-images {
     display: flex;
     justify-content: center;
     gap: 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
 }
 
 .about-images img {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
     object-fit: cover;
+    border: 3px solid var(--image-border);
+    transition: all 0.3s ease;
+}
+
+.about-images img:hover {
+    transform: scale(1.05);
+    border-color: #f39c12;
+    box-shadow: 0 0 20px rgba(243, 156, 18, 0.4);
 }
 
 .about-text p {
     max-width: 600px;
     margin: 0 auto;
-    font-size: 1rem;
-    opacity: 0.8;
+    font-size: 1.1rem;
+    opacity: 0.85;
+    font-weight: 300;
+    letter-spacing: 0.3px;
 }
 
 /* "More" Button */
-/* Copiliot prompt: Add a more button to the about section, make it look like a call to action button, and add some hover effects, make it orange with black text*/
 .more-button {
-    margin-top: 2rem;
+    margin-top: 3rem;
 }
 
 .more-button a {
-    background-color: #f39c12;
-    color: #1a1a1a;
+    background: linear-gradient(135deg, #f39c12, #e67e22);
+    color: white;
     text-decoration: none;
-    padding: 0.75rem 3rem;
-    font-weight: bold;
-    border-radius: 30px;
-    transition: background-color 0.3s, transform 0.3s;
+    padding: 1rem 3rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    box-shadow: 0 4px 15px rgba(243, 156, 18, 0.3);
 }
 
 .more-button a:hover {
-    background-color: #f1c40f;
-    transform: scale(1.1);
-}
-
-/*mobile optimization*/
-@media (max-width: 768px) {
-  nav {
-      flex-direction: column;
-      align-items: center;
-      gap: 1rem;
-      padding: 1rem;
-  }
-
-  nav ul {
-      flex-direction: column;
-      gap: 1rem;
-      align-items: center;
-  }
-
-  .hero h1 {
-      font-size: 2.2rem;
-  }
-
-  .hero h2 {
-      font-size: 1.2rem;
-  }
-
-  .hero p {
-      font-size: 0.9rem;
-      padding: 0 1rem;
-  }
-
-  .about-images {
-      flex-direction: column;
-      align-items: center;
-  }
-
-  .about-images img {
-      width: 80px;
-      height: 80px;
-  }
-
-  .more-button a {
-      padding: 0.6rem 2rem;
-      font-size: 0.9rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero h1 {
-      font-size: 1.8rem;
-  }
-
-  nav {
-      padding: 1rem;
-  }
-
-  nav ul li {
-      font-size: 1rem;
-  }
-
-  .about-section {
-      padding: 3rem 1rem;
-  }
-
-  .about-text p {
-      font-size: 0.9rem;
-  }
-}
-
-
-  
-
-
-
-
-
-  /*contact me page*/
-  /* General Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body, html {
-    font-family: 'Helvetica Neue', sans-serif;
-    color: white;
-    height: 100%;
-    background-color: #1a1a1a;
-}
-
-/* Navigation Bar */
-nav {
-    background-color: black;
-    color: white;
-    padding: 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-nav .logo {
-    font-weight: bold;
-    font-size: 1.5rem;
-}
-
-nav ul {
-    display: flex;
-    gap: 1.5rem;
-    list-style: none;
-}
-
-nav ul li {
-    cursor: pointer;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-nav ul li a:hover {
-    color: #f39c12;
+    background: linear-gradient(135deg, #e67e22, #d35400);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(243, 156, 18, 0.4);
 }
 
 /* Contact Section */
-/* Copiliot prompt: Add a contact me section to the page, with contact me written in bold on top, Include a circular profile picture area in the center*/
 .contact {
     padding: 4rem 2rem;
     text-align: center;
+    background: var(--about-bg);
+    min-height: 80vh;
+    transition: background 0.3s ease;
 }
 
 .contact h2 {
     font-size: 2.5rem;
     margin-bottom: 2rem;
-    color: white;
+    color: var(--text-color);
+    transition: color 0.3s ease;
 }
 
 .profile-container {
@@ -277,215 +313,337 @@ nav ul li a:hover {
     height: 100%;
     border-radius: 50%;
     object-fit: cover;
+    border: 3px solid var(--image-border);
+    transition: all 0.3s ease;
 }
 
-/*Copilot prompt:.Add contact icons underneath profile image with spacing and hover scale effect.*/
+.profile-picture img:hover {
+    transform: scale(1.05);
+    border-color: #f39c12;
+    box-shadow: 0 0 20px rgba(243, 156, 18, 0.4);
+}
+
 .contact-icons {
     display: flex;
     gap: 2rem;
 }
 
 .contact-icons a {
-    color: white;
+    color: var(--text-color);
     text-decoration: none;
     text-align: center;
+    transition: all 0.3s ease;
 }
 
 .contact-icons img {
     width: 40px;
     height: 40px;
     transition: transform 0.3s;
+    filter: brightness(0.8);
 }
-/*copilot prompt: Add a hover effect to the contact icons, make them scale up slightly when hovered over*/
+
 .contact-icons img:hover {
     transform: scale(1.1);
+    filter: brightness(1);
 }
 
 .contact-icons p {
     margin-top: 0.5rem;
     font-size: 1rem;
     opacity: 0.8;
+    transition: color 0.3s ease;
 }
 
-
-
-
-
-
-
-
-  /*about me page*/
-
-  /* General Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body, html {
-    font-family: 'Helvetica Neue', sans-serif;
-    color: white;
-    height: 100%;
-    background-color: #1a1a1a;
-  }
-  
-  /* Navigation Bar */
-  nav {
-    background-color: black;
-    color: white;
-    padding: 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  nav .logo {
-    font-weight: bold;
-    font-size: 1.5rem;
-  }
-  
-  nav ul {
-    display: flex;
-    gap: 1.5rem;
-    list-style: none;
-  }
-  
-  nav ul li {
-    cursor: pointer;
-  }
-  
-  nav ul li a {
-    color: white;
-    text-decoration: none;
-    transition: color 0.3s;
-  }
-  
-  nav ul li a:hover {
-    color: #f39c12;
-  }
-  
-  /* About Section */
-  .about {
+/* About Me Section */
+.about {
     padding: 4rem 2rem;
     text-align: center;
-  }
-  
-  .about h2 {
+    background: var(--about-bg);
+    min-height: 80vh;
+    transition: background 0.3s ease;
+}
+
+.about h2 {
     font-size: 2.5rem;
     margin-bottom: 2rem;
-    color: white;
-  }
-  /*Copilot prompt: create a container where I can put my profile picture and a short bio about myself*/
-  .bio-container {
+    color: var(--text-color);
+    transition: color 0.3s ease;
+}
+
+.bio-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 2rem;
-  }
-  
-  /*Copilot prompt... create a circular profile picture area in the center of the about me page*/
-  .bio-picture {
+}
+
+.bio-picture {
     width: 150px;
     height: 150px;
     margin-bottom: 2rem;
-  }
-  
-  .bio-picture img {
+}
+
+.bio-picture img {
     width: 100%;
     height: 100%;
     border-radius: 50%;
     object-fit: cover;
-  }
-  /*Copilot prompt: Style bio text with good line height and soft opacity*/
-  .bio-text {
+    border: 3px solid var(--image-border);
+    transition: all 0.3s ease;
+}
+
+.bio-picture img:hover {
+    transform: scale(1.05);
+    border-color: #f39c12;
+    box-shadow: 0 0 20px rgba(243, 156, 18, 0.4);
+}
+
+.bio-text {
     max-width: 800px;
     margin: 0 auto;
-    font-size: 1rem;
-    opacity: 0.8;
+    font-size: 1.1rem;
+    opacity: 0.85;
     line-height: 1.6;
-  }
-  
-  .bio-text p {
-    margin-bottom: 1rem;
-  }
-  
+    font-weight: 300;
+}
 
-  
-  
-  /* Gallery Section */
+.bio-text p {
+    margin-bottom: 1rem;
+    letter-spacing: 0.3px;
+}
+
+/* Gallery Section */
 .gallery {
     padding: 4rem 2rem;
     text-align: center;
-    background-color: #1a1a1a;
-  }
-  
-  .gallery h2 {
+    background: var(--about-bg);
+    transition: background 0.3s ease;
+}
+
+.gallery h2 {
     font-size: 2.5rem;
     margin-bottom: 2rem;
-    color: white;
-  }
-  
-  /*copilot prompt: create a gallery section with 5 images in full width, make them look like a grid, and add some spacing between them.*/
-  .gallery-grid {
+    color: var(--text-color);
+    transition: color 0.3s ease;
+}
+
+.gallery-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 1.5rem;
     justify-content: center;
-  }
-  
- /*copilot prompt: add a border to the images, make it look like a polaroid frame*/
-  .gallery-item {
-    flex: 1 1 250px;
-    max-width: 300px;
-    background-color: #2b2b2b;
-    padding: 1rem;
-    border-radius: 8px;
-    transition: transform 0.3s;  
-  }
-  /*copilot prompt: add a hover effect to the images, make them scale up slightly when hovered over*/
-  .gallery-item:hover {
-    transform: scale(1.02);
-  }
- /*copilot prompt: make the images responsive, so they fit well on different screen sizes*/
-  .gallery-item img {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    flex: 1 1 280px;
+    max-width: 350px;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 1.2rem;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="light"] .gallery-item {
+    background-color: rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(243, 156, 18, 0.2);
+}
+
+.gallery-item a {
+    display: block;
+    text-decoration: none;
+}
+
+.gallery-item img {
     width: 100%;
-    height: auto;
-    border-radius: 5px;
+    height: 250px;
+    border-radius: 8px;
     object-fit: cover;
-  }
-  /*copilot prompt: add a description/caption area to each image in the gallery use white font */
-  .gallery-item p {
-    margin-top: 0.5rem;
-    color: #ccc;
+    transition: all 0.3s ease;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.02);
+}
+
+.gallery-item p {
+    margin-top: 1rem;
+    color: var(--text-color);
     font-size: 1rem;
-  }
-  
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    opacity: 0.9;
+    transition: color 0.3s ease;
+}
 
-
-
-  /* Footer */
-  footer {
-    background-color: #111;
-    color: #fff;
+/* Footer */
+footer {
+    background-color: var(--footer-bg);
+    color: var(--text-color);
     text-align: center;
     padding: 2rem 1rem;
-    margin-top: 4rem;
     font-size: 0.9rem;
     opacity: 0.9;
-  }
-  
-  footer .top-link {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+footer .top-link {
     display: inline-block;
     margin-top: 1rem;
     text-decoration: none;
     color: #f39c12;
-    font-weight: bold;
+    font-weight: 600;
     transition: color 0.3s ease;
-  }
-  
-  footer .top-link:hover {
+    letter-spacing: 0.5px;
+}
+
+footer .top-link:hover {
     color: #e67e22;
-  }
-  
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-right {
+        gap: 1rem;
+    }
+
+    /* Mobile menu overlay fix for all pages */
+    nav ul {
+        position: fixed;
+        left: -100%;
+        top: 0;
+        flex-direction: column;
+        background: var(--shadow-color);
+        backdrop-filter: blur(10px);
+        width: 100%;
+        height: 100vh;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        justify-content: center;
+        gap: 3rem;
+        z-index: 1000;
+    }
+
+    nav ul.active {
+        left: 0;
+    }
+
+    nav ul li {
+        margin: 0;
+    }
+
+    nav ul li a {
+        font-size: 1.2rem;
+        padding: 1rem;
+        display: block;
+    }
+
+    /* Hide content when mobile menu is active on ALL pages */
+    body.menu-active .hero-content,
+    body.menu-active .about,
+    body.menu-active .contact,
+    body.menu-active .gallery,
+    body.menu-active .about-section {
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+    }
+
+    /* Ensure normal visibility when menu is closed */
+    body:not(.menu-active) .hero-content,
+    body:not(.menu-active) .about,
+    body:not(.menu-active) .contact,
+    body:not(.menu-active) .gallery,
+    body:not(.menu-active) .about-section {
+        opacity: 1;
+        pointer-events: auto;
+        transition: opacity 0.3s ease;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero h2 {
+        font-size: 1rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+
+    .about-images {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .about-images img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .more-button a {
+        padding: 0.8rem 2rem;
+        font-size: 0.85rem;
+    }
+
+    .contact-icons {
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: center;
+    }
+
+    .gallery-grid {
+        gap: 1rem;
+    }
+
+    .gallery-item {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .gallery-item img {
+        height: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    nav {
+        padding: 1rem;
+    }
+
+    .about-section, .contact, .about, .gallery {
+        padding: 3rem 1rem;
+    }
+
+    .about-text p, .bio-text {
+        font-size: 1rem;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .contact h2, .about h2, .gallery h2 {
+        font-size: 2rem;
+    }
+}
